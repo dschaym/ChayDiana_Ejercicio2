@@ -12,7 +12,7 @@ Console.WriteLine("Día de la semana (1-7, donde 1 es lunes..., 7 es domingo):")
 int dia = int.Parse(Console.ReadLine());
 Console.WriteLine("Carnet vigente S/N");
 string carnet = Console.ReadLine().ToUpper();
-Console.WriteLine("Trae autorizacion?");
+Console.WriteLine("Trae autorizacion? S/N");
 string autorizacion = Console.ReadLine().ToUpper();
 Console.WriteLine("Trae USB? S/N");
 string usb = Console.ReadLine().ToUpper();
@@ -26,7 +26,7 @@ if (rol < 1 || rol > 4)
 }
 else if (hora < 0 || hora >= 23)
 {
-    Console.WriteLine("Error: Hora fuera de rango (0–<23).");
+    Console.WriteLine("Error: Hora fuera de rango (0–<23.0).");
     return;
 }
 else if (dia < 1 || dia > 7)
@@ -57,6 +57,7 @@ else if (unido != "S" && unido != "N")
 
 int acceso = 0;              
 string nivel = "N/A";
+string mensaje = "";
 
 int esLaboral = (dia >= 1 && dia <= 5) ? 1 : 0;         
 int horarioEstudiante = (hora >= 7.0 && hora <= 18.0) ? 1 : 0; 
@@ -143,3 +144,14 @@ if (acceso == 1 && usb == "S")
         acceso = 0;
     }
 }
+
+Console.WriteLine("RESULTADOS DEL ACCESO");
+if (acceso == 1)
+{
+    Console.WriteLine("Acceso: PERMITIDO");
+}
+else
+{
+    Console.WriteLine("Acceso: DENEGADO");
+}
+Console.WriteLine($"Nivel de permiso: {nivel}");
