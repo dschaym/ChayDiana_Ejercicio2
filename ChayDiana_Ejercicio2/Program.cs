@@ -1,1 +1,18 @@
-﻿
+﻿Console.WriteLine("CONTROL DE ACCESO UNIVERSITARIO");
+Console.WriteLine("Rol");
+Console.WriteLine("1. Estudiante");
+Console.WriteLine("2. Docente");
+Console.WriteLine("Tecnico IT");
+Console.WriteLine("Visitante");
+Console.WriteLine("Ingrese su rol (1-4):");
+int rol = int.Parse(Console.ReadLine());
+Console.WriteLine("Hora (0-23):");
+double hora = double.Parse(Console.ReadLine());
+Console.WriteLine("Día de la semana (1-7, donde 1 es lunes..., 7 es domingo):");
+int dia = int.Parse(Console.ReadLine());
+Console.WriteLine("Carnet vigente S/N");
+string carnet = Console.ReadLine().ToUpper();
+Console.WriteLine("Trae USB? S/N");
+string usb = Console.ReadLine().ToUpper();
+Console.WriteLine("Esta unido? S/N");
+string unido = Console.ReadLine().ToUpper();
