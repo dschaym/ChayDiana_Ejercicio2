@@ -135,3 +135,11 @@ switch (rol)
         break;
         // default: no es necesario por la validación previa de rol (1-4)
 }
+// "USB solo permitido si autorización y acompañamiento"
+if (acceso == 1 && usb == "S")
+{
+    if (!(autorizacion == "S" && unido == "S"))
+    {
+        acceso = 0;
+    }
+}
